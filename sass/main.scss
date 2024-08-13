@@ -1,0 +1,186 @@
+@import "utilidades/variables";
+@import "utilidades/mixin";
+
+
+
+
+
+/* margen de total de pagina{}*/  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    img { /* tamaño imagen banner con logo @*/
+        width:100%; 
+        margin: 0% 0% 2% 0%;
+    }
+}
+
+/* estilo menu de nav */ 
+header {
+    text-align: center;
+    padding: 2% 0% 2% 0%;
+    top: 0%;
+    nav ul li a { /* estilo menu de nav  */
+        list-style: none;
+        margin: 0% 1% 0% 1%;
+        display: flex;
+        gap: 30px;
+        margin-right: 100px;
+        color: $color-terciario;
+        text-decoration: none;
+        font-family: "Playwrite ES Deco", cursive; 
+    }
+}
+
+
+/* Flex menu de navegacion */
+
+.padreflex{
+    display: flex;
+    flex-direction: row;
+    flex-direction: wrap reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-fluid{
+    background-color: $color-secundario; 
+    text-align: center;
+    padding: 3% 30% 3% 30%;
+}
+
+.padreflex div{
+    border: solid 3px $color-terciario;
+    width: 10%; 
+}
+ 
+/* para nav movible "position: sticky"*/
+
+.padreflex :hover{
+    background-color: $color-principal;
+    zoom: 120%;
+}
+.padreflex:visited {
+    color: blue;
+}
+
+main {
+    h1 {/* estilo titulo principal*/ 
+        text-align: center;
+        font-family: "Playwrite ES Deco", cursive; 
+        font-size: 45px;
+        margin: 50px;
+    }
+    p {/* estilo en parrafos */
+        color: $color-terciario;
+        font-family: "Playwrite ES Deco", cursive; 
+        margin: 3% 3% 3% 3%; 
+    } 
+    p span {
+        font-weight: bold;
+    }
+    img {/* tamaño imagen parrafo principal*/
+        width: 30%; 
+        align-content: center;  
+        padding: 0% 5% 0% 5%;
+        margin: 2% 50% 2% 50%;
+
+        /* imagenes de contactos  */
+        grid-template-rows: repeat(3, 25%);
+        grid-template-columns: 1fr ;
+        align-content: center;
+        row-gap: 20px;
+   
+       /* estilo en contactos  */
+        margin: 0% 0% 5% 0%;
+        font-family: "Playwrite ES Deco", cursive;
+        font-weight: bold;
+        display: flex;  
+    }
+    .imgespecialidades { /* mixin.scss */
+        @include medidas (400px, 230px);
+    }
+    .imgcontactos {
+        @include medidas (370px, 200px);
+    }
+    .imgccf {
+        @include medidas (700px, 500px);
+        margin: 5% 30% 0% 25%;
+    }
+    .imgbebe {
+        @include medidas (550px, 400px);
+        margin: 5% 30% 0% 25%;
+    }
+    .transicion { /* moviemiento boton certificados */
+        transition: 1s;
+    }
+    .transicion:hover { /* moviemiento boton certificados */
+        transform: translate(15px, 10px);
+    }
+}
+
+
+/* grip imagenes estudios complementarios index */
+.parent{
+        
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 5px;
+        grid-row-gap: 3px;
+        font-family: "Playwrite ES Deco", cursive;
+        flex-direction: column;
+        margin: 5% 3% 5% 3%;
+}
+        
+        
+.parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+
+footer {
+    img {/*tamaño imagenes de contacto {}*/
+        width: 100%;
+        align-content: center;
+        margin: 0% 0% 2% 0%;      
+    }
+    h3 {
+        font-family: "Playwrite ES Deco", cursive;
+        align-content: center;
+        display: flex;
+        font-size: medium;
+        text-align:center; 
+        padding: 5% 35% 5% 35%;  
+    }
+}
+
+
+/*regla de la media query mobile */
+@media only screen and (max-width: 500px){ 
+    body { 
+        background-color: rgb(221, 213, 197);
+    }   
+}
+
+/*Tablet*/
+@media only screen and (min-width: 501px) and (max-width: 960px) {
+    body {
+        background-color: rgb(235, 203, 135);
+    }
+}
+
+/*desktop*/ 
+@media only screen and (min-width: 961px) {
+    body {
+        background-color: rgb(243, 237, 208);
+    }
+}
+    
